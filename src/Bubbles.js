@@ -66,8 +66,8 @@ export default class Bubbles extends Component {
     const { size, spaceBetween, color } = this.props;
     const scale = this.state.circles[index];
     const offset = {
-      x: size + index * (size * 2 + spaceBetween),
-      y: size
+      x: size,
+      y: size + index * (size * 2 + spaceBetween),
     };
 
     return (<Circle
@@ -80,8 +80,9 @@ export default class Bubbles extends Component {
 
   render() {
     const { size, spaceBetween } = this.props;
-    const width = size * 6 + spaceBetween * 2;
-    const height = size * 2;
+    const width = size * 2;
+    const height = size * 6 + spaceBetween * 2;
+
 
     return (<Surface width={width} height={height}>
       {this.renderBubble(0)}
